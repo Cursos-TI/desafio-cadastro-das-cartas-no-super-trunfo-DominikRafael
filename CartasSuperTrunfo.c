@@ -13,7 +13,6 @@ int main() {
     float densidade1;
     float pibPerCapita1;
     float superPoder1;
-    float inversoDensidade1;
 
     // Variáveis da Carta 2
     char estado2;
@@ -26,7 +25,6 @@ int main() {
     float densidade2;
     float pibPerCapita2;
     float superPoder2;
-    float inversoDensidade2;
 
     // Inserindo dados da Carta 1
     printf("- Cadastro da Carta 1 -\n");
@@ -84,13 +82,9 @@ int main() {
     pibPerCapita1 = pib1 * 1000000000 / (float) populacao1; //Carta 1
     pibPerCapita2 = pib2 * 1000000000 / (float) populacao2; //Carta 2
 
-    //Inverso da Densidade Populacional
-    inversoDensidade1 = area1 / (float) populacao1;
-    inversoDensidade2 = area2 / (float) populacao2;
-
     //Calculo do super poder
-    superPoder1 = (float) populacao1 + area1 + (pib1 * 1000000000) + pontos1 + pibPerCapita1 + inversoDensidade1; //Carta 1
-    superPoder2 = (float) populacao2 + area2 + (pib2 * 1000000000) + pontos2 + pibPerCapita2 + inversoDensidade2; //Carta 2
+    superPoder1 = (float) populacao1 + area1 + (pib1 * 1000000000) + pontos1 + pibPerCapita1 + (1/densidade1); //Carta 1
+    superPoder2 = (float) populacao2 + area2 + (pib2 * 1000000000) + pontos2 + pibPerCapita2 + (1/densidade2); //Carta 2
 
     //Comparação das cartas
     int resultadoPopulacao = populacao1 > populacao2;
